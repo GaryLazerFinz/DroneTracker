@@ -7,13 +7,15 @@
 <h1>This is a test</h1>
 <p>This is a mic input.</p>
 <input type="file" accept="audio/*;capture=microphone">
-    </body>
   
-    <script>
+   <script>
+ 
   navigator.getUserMedia = navigator.getUserMedia ||
                      navigator.webkitGetUserMedia ||
                      navigator.mozGetUserMedia;
-
+  
+  
+  
 if (navigator.getUserMedia) {
    navigator.getUserMedia({ audio: true, video: { width: 1280, height: 720 } },
       function(stream) {
@@ -28,5 +30,5 @@ if (navigator.getUserMedia) {
 }
   
   <\script>
-
+  </body>
 </html>
