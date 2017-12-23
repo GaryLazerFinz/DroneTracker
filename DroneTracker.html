@@ -8,9 +8,29 @@
 <p>This is a mic input.</p>
 <input type="file" accept="audio/*;capture=microphone">
   
-   <script>
- 
-  navigator.getUserMedia = navigator.getUserMedia ||
+
+<p>Click the button to display the version of your browser.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+  
+  
+<p>Click the button to display taudio info.</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+function myFunction() {
+    var x = "Version info: " + navigator.appVersion;
+    document.getElementById("demo").innerHTML = x;
+}
+  
+  function myFunction2() {
+    
+ var y = "Version info: " + navigator.getUserMedia = navigator.getUserMedia ||
                      navigator.webkitGetUserMedia ||
                      navigator.mozGetUserMedia;
   
@@ -28,6 +48,9 @@ if (navigator.getUserMedia) {
 } else {
    console.log("getUserMedia not supported");
 }
+    
+    document.getElementById("demo2").innerHTML = y;
+  }
   
   <\script>
   </body>
