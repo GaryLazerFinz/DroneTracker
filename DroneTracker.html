@@ -30,7 +30,7 @@ function myFunction() {
   
   function myFunction2() {
     
- var y = "Version info: " + navigator.getUserMedia = navigator.getUserMedia ||
+ navigator.getUserMedia = navigator.getUserMedia ||
                      navigator.webkitGetUserMedia ||
                      navigator.mozGetUserMedia;
   
@@ -48,8 +48,6 @@ if (navigator.getUserMedia) {
 } else {
    console.log("getUserMedia not supported");
 }
-    
-    document.getElementById("demo2").innerHTML = y;
   }
   
   <\script>
