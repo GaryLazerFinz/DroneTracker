@@ -6,32 +6,21 @@
 
 <h1>This is a test</h1>
 <p>This is a mic input.</p>
+  <p>
 <input type="file" accept="audio/*;capture=microphone">
-  <button onclick="WriteFile()">makefile</button>
+  <button onclick="DrawMap()">Draw Map</button>
+    </p>
 <canvas id="myCanvas" width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
-
+function DrawMap (){
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.arc(100, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
-  
-  function WriteFile()
-
-{
-
-var fso = new ActiveXObject("Scripting.FileSystemObject");
-
-var fh = fso.CreateTextFile("c:\\Test.txt", true);
-
-fh.WriteLine("Some text goes here...");
-
-fh.Close();
-
-}
+  }
   
   </script>
   </body>
