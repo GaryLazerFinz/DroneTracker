@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>HTML Tutorial</title>
+<title>DroneDefense</title>
 <body>
   
 
@@ -8,20 +8,16 @@
 <p>This is a mic input.</p>
 <input type="file" accept="audio/*;capture=microphone">
   
-
-<p>Click the button to display the version of your browser.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-  
-  
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
-function myFunction() {
-    var x = "Version info: " + navigator.appVersion;
-    document.getElementById("demo").innerHTML = x;
-}
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx.stroke();
   
   <\script>
   </body>
