@@ -20,7 +20,13 @@
     </p>
 <canvas id="myCanvas" width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
+<p>
+  <p>Images to use:</p>
+<img id="drone" width="220" height="277" src="img_the_scream.jpg" alt="The Scream">
 
+<img id="mic" width="220" height="277" src="mic.png" alt="The Scream">
+</p>
+  
 <script>
 function DrawMap (){
  var mics= document.getElementById("myNumber").value;
@@ -31,6 +37,10 @@ var ctx = c.getContext("2d");
   ctx.beginPath();
 ctx.arc(100+ i, 75, 50, 0, 2 * Math.PI);
 ctx.stroke();
+  var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("mic");
+    ctx.drawImage(img, 10, 10, 150, 180);
   }
   
 }
