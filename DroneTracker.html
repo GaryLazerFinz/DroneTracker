@@ -14,10 +14,13 @@
  <p>Click the button to draw a map</p>
  <button onclick="DrawMap()">Draw Map</button>
  </p>
-<canvas id="myCanvas" width="300" height="150" style="border:8px solid #d3d3d3;">
+<canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-
  
+
+<p><strong>Tip:</strong> Try to click different places in the canvas.</p>
+
+<p id="demo"></p>
   
 <script>
 function DrawMap (){
@@ -33,6 +36,14 @@ ctx.stroke();
   }
   
 }
+  
+  function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("demo").innerHTML = coords;
+}
+  
   </script>
   </body>
 </html>
