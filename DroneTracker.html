@@ -7,7 +7,7 @@
 <h1>DroneDetector</h1>
 <p>This is a mic input.</p>
 <p><input type="file" accept="audio/*;capture=microphone"></p>
-<div id="waveform"></div>
+
   
 <p>Add mic information.</p>
 <p>X Coordinate  <input type="number" id="xcoord" value="100"> 
@@ -25,14 +25,7 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
   
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.4.0/wavesurfer.min.js">
- var wavesurfer = WaveSurfer.create({
-    container: '#waveform',
-    waveColor: 'violet',
-    progressColor: 'purple'
-});
-    wavesurfer.load('audio.wav');
-    
+  <script>
     load("fft.js");
   var micx =[];
   var micy =[];
