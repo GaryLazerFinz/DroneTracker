@@ -45,6 +45,10 @@ var ctx = c.getContext("2d");
   ctx.beginPath();
 ctx.arc(micx[i], micy[i], micdb[i], 0, 2 * Math.PI);
 ctx.stroke();
+  var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.rect(micx[i], micy[i],micx[i]+5, micy[i]+5);
+ctx.stroke();
  
   }
   
