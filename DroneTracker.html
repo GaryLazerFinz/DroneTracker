@@ -15,7 +15,7 @@
  <p>Click the button to add a mic</p>
  <button onclick="AddMic()">Add New</button>
  <p>Click the button find the drone.</p>
- <button onclick="FindDrone(20,20)">Find</button>
+ <button onclick="FindDrone()">Find</button>
  </p>
 <canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
@@ -63,21 +63,19 @@ ctx.stroke();
 }
   
   
-  function FindDrone ( dronex,droney  ){
+  function FindDrone (  ){
     
     
-    var motorx = [ dronex,(dronex+8),dronex,(dronex +8)];
-    var motory = [ droney,droney,(droney +8),(droney +8)];
-    for (i = 0; i < 4; i++) {  
-     var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-  ctx.beginPath();
-ctx.arc(motorx[i], motory[i], 10, 0, 2 * Math.PI);
-ctx.stroke();
-      }
+    var dronex = 20;
+    var droney = 20;
+    
       var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 ctx.rect(dronex, droney,8, 8);
+ctx.stroke();
+    var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.rect(dronex, droney,4, 4);
 ctx.stroke();
     
 }
