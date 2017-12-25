@@ -61,14 +61,14 @@ ctx.stroke();
     document.getElementById("xcoord").value = x;
     document.getElementById("ycoord").value = y;
 }
-  
-  
-  function FindDrone (){
-    
-    var dronex = 20;
+  var dronex = 20;
     var droney = 20;
-    var motorx = [ dronex,dronex+8,dronex,dronex +8];
-    var motory = [ droney,droney,droney +8,droney +8];
+  
+  function FindDrone ( dronex,droney  ){
+    
+    
+    var motorx = [ dronex,(dronex+8),dronex,(dronex +8)];
+    var motory = [ droney,droney,(droney +8),(droney +8)];
     for (i = 0; i < 4; i++) {  
      var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
