@@ -19,7 +19,6 @@
  </p>
 <canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-<p id="demo"></p>
 <p><strong>Tip:</strong> Try to click different places in the canvas.</p>
 
 
@@ -58,7 +57,7 @@ ctx.stroke();
     var x = (event.clientX - 8);
     var y = (event.clientY - 233);
     var coords = "X coords: " + x + ", Y coords: " + y;
-    document.getElementById("demo").innerHTML = coords;
+    
     document.getElementById("xcoord").value = x;
     document.getElementById("ycoord").value = y;
 }
@@ -68,8 +67,8 @@ ctx.stroke();
     
     var dronex = 20;
     var droney = 20;
-    var motorx = ( dronex,dronex+8,dronex,dronex +8);
-    var motory = ( droney,droney,droney +8,droney +8);
+    var motorx = [ dronex,dronex+8,dronex,dronex +8];
+    var motory = [ droney,droney,droney +8,droney +8];
     for (i = 0; i < 4; i++) {  
      var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
