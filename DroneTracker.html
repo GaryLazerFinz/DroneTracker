@@ -9,8 +9,12 @@
   <p>
 <input type="file" accept="audio/*;capture=microphone">
 </p>
-<p>Click the button to enter the number of mics.</p>
-<input type="number" id="myNumber" value="2">
+<p>Add mic information.</p>
+<input type="number" id="xcoord" value="100">
+<input type="number" id="ycoord" value="50">
+  <input type="number" id="db" value="50">
+ <p>Click the button to add a mic</p>
+ <button onclick="AddMic()">Draw Map</button>
  <p>Click the button to draw a map</p>
  <button onclick="DrawMap()">Draw Map</button>
  </p>
@@ -23,14 +27,25 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 <p id="demo"></p>
   
 <script>
+  var micx =[];
+  var micy =[];
+  var micdb =[];
+  
+  
+  function AddMic (){
+    micx.push (document.getElementById("xcoord").value);
+    micy.push (document.getElementById("ycoord").value);
+    micdb.push (document.getElementById("db").value);
+    }
+  
+  
 function DrawMap (){
- var mics= document.getElementById("myNumber").value;
 
-for (i = 0; i < mics; i++) {  
+for (i = 0; i < micx.length; i++) {  
   var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
   ctx.beginPath();
-ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+ctx.arc(micx[i], micy[i], micdb[i], 0, 2 * Math.PI);
 ctx.stroke();
  
   }
