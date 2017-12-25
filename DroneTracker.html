@@ -18,11 +18,11 @@
  </p>
 <canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
- 
+ <p id="demo"></p>
 
 <p><strong>Tip:</strong> Try to click different places in the canvas.</p>
 
-<p id="demo"></p>
+
   
 <script>
   var micx =[];
@@ -47,15 +47,15 @@ ctx.arc(micx[i], micy[i], micdb[i], 0, 2 * Math.PI);
 ctx.stroke();
   var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
-ctx.rect(micx[i], micy[i],2, 2);
+ctx.rect(micx[i], micy[i],5, 5);
 ctx.stroke();
  }
   
 }
   
   function showCoords(event) {
-    var x = event.clientX - 8;
-    var y = event.clientY - 233;
+    var x = (event.clientX - 8);
+    var y = (event.clientY - 233);
     var coords = "X coords: " + x + ", Y coords: " + y;
     document.getElementById("demo").innerHTML = coords;
 }
