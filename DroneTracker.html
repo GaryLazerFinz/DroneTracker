@@ -59,7 +59,11 @@ ctx.stroke();
     var y = (event.clientY - 233);
     var coords = "X coords: " + x + ", Y coords: " + y;
     document.getElementById("demo").innerHTML = coords;
+    document.getElementById("xcoord").value = x;
+    document.getElementById("ycoord").value = y;
 }
+  
+  
   function FindDrone (){
     
     var dronex = 20;
@@ -70,7 +74,7 @@ ctx.stroke();
      var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
   ctx.beginPath();
-ctx.arc(motorx[i], motory[i], 5, 0, 2 * Math.PI);
+ctx.arc(motorx[i], motory[i], 10, 0, 2 * Math.PI);
 ctx.stroke();
       }
       var c=document.getElementById("myCanvas");
