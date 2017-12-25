@@ -4,22 +4,22 @@
 <body>
   
 
-<h1>This is a test</h1>
+<h1>DroneDetector</h1>
 <p>This is a mic input.</p>
 <p><input type="file" accept="audio/*;capture=microphone"></p>
+
 <p>Add mic information.</p>
 <p>X Coordinate  <input type="number" id="xcoord" value="100"> 
   Y Coordinate<input type="number" id="ycoord" value="50"> 
   Volume  <input type="number" id="db" value="50">
  <p>Click the button to add a mic</p>
  <button onclick="AddMic()">Add New</button>
- <p>Click the button to draw a map</p>
- <button onclick="DrawMap()">Draw Map</button>
+ <p>Click the button find the drone.</p>
+ <button onclick="FindDrone()">Find</button>
  </p>
 <canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
- <p id="demo"></p>
-
+<p id="demo"></p>
 <p><strong>Tip:</strong> Try to click different places in the canvas.</p>
 
 
@@ -34,7 +34,8 @@ Your browser does not support the HTML5 canvas tag.</canvas>
     micx.push (document.getElementById("xcoord").value);
     micy.push (document.getElementById("ycoord").value);
     micdb.push (document.getElementById("db").value);
-    }
+    DrawMap();
+  }
   
   
 function DrawMap (){
@@ -59,7 +60,25 @@ ctx.stroke();
     var coords = "X coords: " + x + ", Y coords: " + y;
     document.getElementById("demo").innerHTML = coords;
 }
-  
+  function FindDrone (){
+    
+    var dronex = 20;
+    var droney = 20;
+    var motorx = ( dronex,dronex+8,dronex,dronex +8);
+    var motory = ( droney,droney,droney +8,droney +8);
+    for (i = 0; i < 4; i++) {  
+     var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+  ctx.beginPath();
+ctx.arc(motorx[i], motory[i], 5, 0, 2 * Math.PI);
+ctx.stroke();
+      }
+      var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.rect(dronex, droney,8, 8);
+ctx.stroke();
+    
+}
   </script>
   </body>
 </html>
