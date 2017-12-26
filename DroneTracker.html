@@ -21,11 +21,24 @@
 <canvas id="myCanvas" onclick="showCoords(event)"  width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 <p><strong>Tip:</strong> Try to click different places in the canvas.</p>
-
+ <div id="tester" style="width:600px;height:250px;"></div>
 
   
 <script src="/fft.js"></script>
+  <script src="plotly-latest.min.js"></script>
   <script>
+    
+   
+
+
+<script>
+	TESTER = document.getElementById('tester');
+	Plotly.plot( TESTER, [{
+	x: [1, 2, 3, 4, 5],
+	y: [1, 2, 4, 8, 16] }], {
+	margin: { t: 0 } } );
+</script>
+    
     
   var micx =[];
   var micy =[];
