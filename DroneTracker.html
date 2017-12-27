@@ -7,7 +7,7 @@
 
 <h1>DroneDetector</h1>
 <p>This is a mic input.</p>
-<p><input id="sound" type="file" accept="audio/*;capture=microphone"></p>
+<p><input id="file-input" type="file" accept="audio/*;capture=microphone"></p>
 
   
 <p>Add mic information.</p>
@@ -28,14 +28,38 @@ Your browser does not support the HTML5 canvas tag.</canvas>
  
 <canvas id="myCanvas2" width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
+<p>
 
-
+<h3>Contents of the file:</h3>
+<pre id="file-content"></pre>
+</p>
 <script>
 
 
 
 
-var sound =document.getElementById("sound");
+
+function readSingleFile(e) {
+  var file = e.target.files[0];
+  if (!file) {
+    return;
+  }
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var contents = e.target.result;
+    displayContents(contents);
+  };
+  reader.readAsText(file);
+}
+
+function displayContents(contents) {
+  var element = document.getElementById('file-content');
+  element.textContent = contents;
+}
+
+document.getElementById('file-input')
+  .addEventListener('change', readSingleFile, false);
+
 	
 function DrawGraph (){
 	var scale =300/sound.length;
