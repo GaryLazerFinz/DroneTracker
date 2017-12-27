@@ -31,15 +31,18 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 	
 <script> 
 var sound = [1,7,8,5,6,3,9,8,3];
+	
 function DrawGraph (){
-
+	var scale =300/sound.length;
+	
+for (i = 0; i < sound.length; i++) {  
 var c=document.getElementById("myCanvas2");
 var ctx=c.getContext("2d");
 ctx.beginPath();
-ctx.moveTo(0,0);
+ctx.moveTo((i * scale),75);
 ctx.lineTo(300,150);
 ctx.stroke();
-
+}
 }
 	
   var micx =[];
