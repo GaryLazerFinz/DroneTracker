@@ -40,7 +40,13 @@ var c=document.getElementById("myCanvas2");
 var ctx=c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo((i * scale),75);
-ctx.lineTo(300,150);
+ctx.lineTo((i * scale),(75 +sound[i] ));
+ctx.stroke();
+	
+var ctx=c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo((i * scale),(75 +sound[i] ));
+ctx.lineTo(((i +1) * scale),75);
 ctx.stroke();
 }
 }
