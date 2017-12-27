@@ -35,7 +35,7 @@ var sound = [10,70,-80,50,-60,30,96,-84,33];
 function DrawGraph (){
 	var scale =300/sound.length;
 	
-for (i = 0; i < sound.length; i++) {  
+for (i = 0; i < sound.length -1; i++) {  
 var c=document.getElementById("myCanvas2");
 var ctx=c.getContext("2d");
 ctx.beginPath();
