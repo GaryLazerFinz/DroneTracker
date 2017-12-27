@@ -28,8 +28,51 @@ Your browser does not support the HTML5 canvas tag.</canvas>
  
 <canvas id="myCanvas2" width="300" height="150" style="border:8px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-	
-<script> 
+
+	input id="inputFileToRead" type="file" onchange="inputFileToRead_Changed(this);"></input>
+
+<script type="text/javascript">
+
+// user interface events
+
+function inputFileToRead_Changed(inputFileToRead)
+{
+	var pathOfFileToRead = inputFileToRead.files[0].name;
+
+	new FileHelper().readStringFromFileAtPath
+	(
+		pathOfFileToRead,
+		inputFileToRead_Changed_2
+	);
+}
+
+function inputFileToRead_Changed_2(contentsOfFileAsString)
+{
+	document.body.innerHTML = contentsOfFileAsString;
+}
+
+// classes
+
+function FileHelper()
+{}
+{
+	FileHelper.prototype.readStringFromFileAtPath = function(pathOfFileToReadFrom, callback)
+	{
+		var request = new XMLHttpRequest();
+		request.onload = this.readStringFromFileAtPath_OnLoad.bind(this, callback);
+		request.open("GET", pathOfFileToReadFrom, true);
+		request.send();
+	}
+
+	FileHelper.prototype.readStringFromFileAtPath_OnLoad = function(callback, event)
+	{
+		var request = event.target;
+		var returnValue = request.responseText;
+		callback(returnValue);
+	}
+}
+
+
 var sound = [10,70,-80,50,-60,30,96,-84,33];
 	
 function DrawGraph (){
