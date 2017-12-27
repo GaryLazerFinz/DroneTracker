@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>DroneDefense</title>
-	
-
-		
+			
 <body>
   
 
@@ -28,17 +26,25 @@ Your browser does not support the HTML5 canvas tag.</canvas>
 
 
 	
-	<script> src="/plotly-latest.min.js"</script>	
+	<p>Click the button todraw a graph </p>
+ <button onclick="DrawGraph()">Graph</button>
+ 
+<canvas id="myCanvas2" width="300" height="150" style="border:8px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
 <script> 
-HTMLPreview.init(); 
+var sound = [1,7,8,5,6,3,9,8,3];
+
+function DrawGraph (){
+
+var c=document.getElementById("myCanvas2");
+var ctx=c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(0,0);
+ctx.lineTo(300,150);
+ctx.stroke();
+
+}
 	
-
-	TESTER = document.getElementById('tester');
-	Plotly.plot( TESTER, [{
-	x: [1, 2, 3, 4, 5],
-	y: [1, 2, 4, 8, 16] }], {
-	margin: { t: 0 } } );
-
   var micx =[];
   var micy =[];
   var micdb =[];
