@@ -1,0 +1,8 @@
+var request = new AudioFileRequest('test.wav');
+request.onSuccess = new function(decoded) {
+    // Use the decoded data
+}
+request.onFailure = new function() {
+    // Something went wrong
+}
+request.send();
