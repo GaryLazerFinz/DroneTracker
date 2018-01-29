@@ -13,7 +13,7 @@
 <pre id="file-content"></pre>
 </p>
 	
-  <script>
+ <script>
 
 
 
@@ -27,7 +27,7 @@ function readSingleFile(e) {
     var contents = e.target.result;
     displayContents(contents);
   };
-  reader.readAsText(file);
+  reader.readAsBinaryString(file);
 }
 
 function displayContents(contents) {
