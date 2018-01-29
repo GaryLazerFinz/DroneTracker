@@ -3,12 +3,12 @@
 <title>DroneDefense</title>
 			
 <body>
-  <script>
+
 
 <h1>DroneDetector</h1>
 <p>This is a mic input.</p>
 <p><input id="file-input" type="file" accept="audio/*;capture=microphone"></p>
-
+  <script>
 
 var request = new AudioFileRequest('test.wav');
 request.onSuccess = new function(decoded) {
