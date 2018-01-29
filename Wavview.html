@@ -10,7 +10,13 @@
 <p><input id="file-input" type="file" accept="audio/*;capture=microphone"></p>
 <p>
 <h3>Contents of the file:</h3>
+<h3>ChunkID</h3>
+<pre id="ChunkID"></pre>
+	
 <pre id="file-content"></pre>
+	
+	
+	
 </p>
 	
  <script>
@@ -31,8 +37,10 @@ function readSingleFile(e) {
 }
 
 function displayContents(contents) {
-  var element = document.getElementById('file-content');
-  element.textContent = contents;
+var element = document.getElementById('ChunkIDt');
+  element.textContent = contents.splice(0, 44); 
+  var element1 = document.getElementById('file-content');
+  element1.textContent = contents;
 }
 
 document.getElementById('file-input')
