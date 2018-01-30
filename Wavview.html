@@ -47,9 +47,9 @@ function displayContents(contents) {
 var element = document.getElementById('ChunkID');
   element.textContent = contents.substr(0, 4); 
 var element1 = document.getElementById('ChunkSize');
-  element1.textContent = contents.substr(0, 4); 
+  element1.textContent = contents.substr(4,4); 
 var element2 = document.getElementById('Format');
-  element2.textContent = contents.substr(0, 4); 
+  element2.textContent = contents.substr(8, 4); 
   var element1 = document.getElementById('file-content');
   element1.textContent = contents.substr(0, 32); 
 	
