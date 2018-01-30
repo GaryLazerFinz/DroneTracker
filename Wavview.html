@@ -12,15 +12,25 @@
 <h3>Contents of the file:</h3>
 	
 <h3>ChunkID</h3>
-<pre id="ChunkID"></pre>
+<pre id="chunkID"></pre>
 	
 <h3>ChunkSize</h3>
-<pre id="ChunkSize"></pre>
+<pre id="chunkSize"></pre>
 
 <h3>Format</h3>
-<pre id="Format"></pre>
+<pre id="format"></pre>
 	
-<pre id="file-content"></pre>
+h3>Sub Chunk1ID</h3>
+<pre id="subChunk1ID"></pre>
+	
+<h3>Sub Chunk1Size</h3>
+<pre id="subChunk1Size"></pre>
+
+<h3>Audio Format</h3>
+<pre id="audioFormat"></pre>
+	
+<h3>Number of Channels</h3>
+<pre id="numChannels"></pre>
 	
 	
 	
@@ -44,14 +54,21 @@ function readSingleFile(e) {
 }
 
 function displayContents(contents) {
-var element = document.getElementById('ChunkID');
-  element.textContent = contents.substr(0, 4); 
-var element1 = document.getElementById('ChunkSize');
-  element1.textContent = contents.substr(4,4); 
-var element2 = document.getElementById('Format');
-  element2.textContent = contents.substr(8, 4); 
-  var element1 = document.getElementById('file-content');
-  element1.textContent = contents.substr(0, 32); 
+var chunkID = document.getElementById('chunkID');
+  chunkID.textContent = contents.substr(0, 4); 
+var chunkSize = document.getElementById('chunkSize');
+  chunkSize.textContent = contents.substr(4,4); 
+var format = document.getElementById('format');
+  format.textContent = contents.substr(8, 4); 
+var subChunk1ID = document.getElementById('subChunk1ID');
+  subChunk1ID.textContent = contents.substr(12, 4);
+var subChunk1Size = document.getElementById('subChunk1Size');
+  subChunk1Size.textContent = contents.substr(16,4); 
+var audioFormat = document.getElementById('audioFormat');
+  audioFormat.textContent = contents.substr(20, 2); 
+var numChannels = document.getElementById('numChannels');
+  subChunkID.numChannels = contents.substr(22, 4); 
+	
 	
 }
 
