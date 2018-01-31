@@ -105,7 +105,9 @@ function convert(input) {
   for (var i = 0; i < input.length; i++) {
       output.value += input[i].charCodeAt(0).toString(2) + " ";
   }
+return output;
 }
+	 
 document.getElementById('file-input')
   .addEventListener('change', readSingleFile, false);
     
