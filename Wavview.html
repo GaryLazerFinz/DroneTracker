@@ -54,7 +54,17 @@
 </p>
 	
  <script>
+	 
+function stringToBinary(str, spaceSeparatedOctets) {
+    function zeroPad(num) {
+        return "00000000".slice(String(num).length) + num;
+    }
 
+    return str.replace(/[\s\S]/g, function(str) {
+        str = zeroPad(str.charCodeAt().toString(2));
+        return !1 == spaceSeparatedOctets ? str : str + " "
+    });
+};
 
 
 function readSingleFile(e) {
@@ -74,7 +84,8 @@ function displayContents(contents) {
 var chunkID = document.getElementById('chunkID');
   chunkID.textContent = contents.substr(0, 4); 
 var chunkSize = document.getElementById('chunkSize');
-  chunkSize.textContent = contents.substr(4,4); 
+var test = contents.substr(4,4);  
+  chunkSize.textContent = stringToBinary(test);
 var format = document.getElementById('format');
   format.textContent = contents.substr(8, 4); 
 var subChunk1ID = document.getElementById('subChunk1ID');
