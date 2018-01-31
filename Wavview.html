@@ -74,7 +74,7 @@ function displayContents(contents) {
 var chunkID = document.getElementById('chunkID');
   chunkID.textContent = contents.substr(0, 4); 
 var chunkSize = document.getElementById('chunkSize');
-  chunkSize.textContent = convert(contents.substr(4,4)); 
+  chunkSize.textContent = contents.substr(4,4); 
 var format = document.getElementById('format');
   format.textContent = contents.substr(8, 4); 
 var subChunk1ID = document.getElementById('subChunk1ID');
@@ -99,14 +99,6 @@ var subChunk2Size = document.getElementById('subChunk2Size');
   subChunk2Size.textContent = contents.substr(40,4); 
 }
 	 
-function convert(input) {  
- var output;
-output.value = "";
-  for (var i = 0; i < input.length; i++) {
-      output.value += input[i].charCodeAt(0).toString(2) + " ";
-  }
-return output;
-}
 	 
 document.getElementById('file-input')
   .addEventListener('change', readSingleFile, false);
