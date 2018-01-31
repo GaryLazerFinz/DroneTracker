@@ -74,7 +74,8 @@ function displayContents(contents) {
 var chunkID = document.getElementById('chunkID');
   chunkID.textContent = contents.substr(0, 4); 
 var chunkSize = document.getElementById('chunkSize');
-  chunkSize.textContent = convert(contents.substr(4,4)); 
+var text=contents.substr(4,4);
+  chunkSize.textContent = convert(text); 
 var format = document.getElementById('format');
   format.textContent = contents.substr(8, 4); 
 var subChunk1ID = document.getElementById('subChunk1ID');
